@@ -1,4 +1,4 @@
-const paths = {
+const Path = {
   WELCOME_SCREEN: `/`,
   DEV_ARTIST: `/dev-artist`,
   DEV_GENRE: `/dev-genre`,
@@ -7,4 +7,9 @@ const paths = {
   LOSE: `/lose`,
 };
 
-export {paths};
+const GameType = {
+  ARTIST: `artist`,
+  GENRE: `genre`,
+};
+
+export {Path, GameType};
