@@ -7,30 +7,50 @@ import GenreQuestionScreen from "../genre-question-screen/genre-question-screen"
 import AuthScreen from "../auth-screen/auth-screen";
 import WinScreen from "../win-screen/win-screen";
 import GameOverScreen from "../game-over-screen/game-over-screen";
+import {Path} from "../../constants";
+import GameScreen from "../game-screen/game-screen";
 
 const App = (props) => {
-  // eslint-disable-next-line react/prop-types
-  const {errorsCount} = props;
+  const {errorsCount, questions} = props;
+  const [firstQuestion, secondQuestion] = questions;
+
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path = "/">
-          <WelcomeScreen errorsCount = {errorsCount} />
+        <Route exact path = {Path.WELCOME_SCREEN}
+          render={({history}) => (
+            <WelcomeScreen
+              onPlayButtonClick={() => history.push(`/game`)}
+              errorsCount={errorsCount}
+            />
+          )}
+        />
+        <Route exact path = {Path.DEV_ARTIST}>
+          <ArtistQuestionScreen
+            question={secondQuestion}
+            onAnswer={() => {}}
+          />
         </Route>
-        <Route exact path = "/dev-artist">
-          <ArtistQuestionScreen/>
+        <Route exact path = {Path.DEV_GENRE}>
+          <GenreQuestionScreen
+            question={firstQuestion}
+            onAnswer={() => {}}
+          />
         </Route>
-        <Route exact path="/dev-genre">
-          <GenreQuestionScreen />
-        </Route>
-        <Route exact path="/login">
+        <Route exact path = {Path.LOGIN}>
           <AuthScreen />
         </Route>
-        <Route exact path="/result">
+        <Route exact path = {Path.RESULT}>
           <WinScreen />
         </Route>
-        <Route exact path="/lose">
+        <Route exact path = {Path.LOSE}>
           <GameOverScreen />
+        </Route>
+        <Route exact path="/game">
+          <GameScreen
+            errorsCount={errorsCount}
+            questions={questions}
+          />
         </Route>
       </Switch>
     </BrowserRouter>
@@ -39,6 +59,7 @@ const App = (props) => {
 
 App.propTypes = {
   errorsCount: PropTypes.number.isRequired,
+  questions: PropTypes.array.isRequired,
 };
 
 export default App;
