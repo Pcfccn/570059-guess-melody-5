@@ -12,4 +12,6 @@ const GameType = {
   GENRE: `genre`,
 };
 
-export {Path, GameType};
+const MAX_MISTAKE_COUNT = 3;
+
+export {Path, GameType, MAX_MISTAKE_COUNT};
