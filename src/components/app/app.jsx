@@ -23,10 +23,14 @@ const App = () => {
           <AuthScreen />
         </Route>
         <Route exact path = {Path.RESULT}>
-          <WinScreen />
+          <WinScreen
+            onReplayButtonClick={() => history.push(`/game`)}
+          />
         </Route>
         <Route exact path = {Path.LOSE}>
-          <GameOverScreen />
+          <GameOverScreen
+            onReplayButtonClick={() => history.push(`/game`)}
+          />
         </Route>
         <Route exact path="/game">
           <GameScreen
