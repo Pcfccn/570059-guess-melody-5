@@ -15,8 +15,7 @@ import withUserAnswer from "../../hocs/with-user-answer/with-user-answer";
 const GenreQuestionScreenWrapped = withAudioPlayer(withUserAnswer(GenreQuestionScreen));
 const ArtistQuestionScreenWrapped = withAudioPlayer(ArtistQuestionScreen);
 
-const GameScreen = (props) => {
-  const {questions, step, onUserAnswer, mistakes} = props;
+const GameScreen = ({questions, step, onUserAnswer, mistakes}) => {
   const question = questions[step];
 
   if (mistakes >= MAX_MISTAKE_COUNT) {

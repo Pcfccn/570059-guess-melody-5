@@ -2,9 +2,12 @@ import {PropTypes} from "prop-types";
 import React from "react";
 import GenreQuestionItem from "../genre-question-item/genre-question-item";
 import genreQuestionProp from "./genre-question.prop";
-const GenreQuestionScreen = (props) => {
-  const {onAnswer, onChange, question, renderPlayer, children, userAnswers} = props;
+const GenreQuestionScreen = ({onAnswer, onChange, question, renderPlayer, children, userAnswers}) => {
   const {answers, genre} = question;
+  const handleFormSubmit = (evt) => {
+    evt.preventDefault();
+    onAnswer();
+  };
 
   return (
     <section className="game game--genre">
@@ -25,10 +28,7 @@ const GenreQuestionScreen = (props) => {
       <section className="game__screen">
         <h2 className="game__title">Выберите {genre} треки</h2>
         <form className="game__tracks"
-          onSubmit={(evt) => {
-            evt.preventDefault();
-            onAnswer();
-          }}
+          onSubmit={handleFormSubmit}
         >
           {answers.map((answer, i) => (
             <GenreQuestionItem
