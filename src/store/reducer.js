@@ -1,4 +1,3 @@
-import {MAX_MISTAKE_COUNT} from "../constants";
 import {questions} from "../mocks/questions";
 import {ActionType} from "../store/action";
 import {extend} from "../utils";
@@ -18,11 +17,6 @@ const reducer = (state = initialState, action) => {
       });
 
     case ActionType.INCREMENT_MISTAKES:
-      const mistakes = state.mistakes + action.payload;
-      if (mistakes >= MAX_MISTAKE_COUNT) {
-        return extend({}, initialState);
-      }
-
       return extend(state, {
         mistakes: state.mistakes + action.payload,
       });
