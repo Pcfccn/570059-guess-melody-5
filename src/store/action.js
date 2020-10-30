@@ -5,12 +5,17 @@ const ActionType = {
   INCREMENT_MISTAKES: `INCREMENT_MISTAKES`,
   INCREMENT_STEP: `INCREMENT_STEP`,
   RESET_GAME: `RESET_GAME`,
+  LOAD_QUESTIONS: `LOAD_QUESTIONS`,
 };
 
 const ActionCreator = {
   incrementStep: () => ({
     type: ActionType.INCREMENT_STEP,
     payload: 1,
+  }),
+  loadQuestions: (questions) => ({
+    type: ActionType.LOAD_QUESTIONS,
+    payload: questions,
   }),
   resetGame: () => ({
     type: ActionType.RESET_GAME,
