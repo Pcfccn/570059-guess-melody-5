@@ -14,4 +14,9 @@ const GameType = {
 
 const MAX_MISTAKE_COUNT = 3;
 
-export {Path, GameType, MAX_MISTAKE_COUNT};
+const AuthorizationStatus = {
+  AUTHORIZED: `AUTORIZED`,
+  NOT_AUTHORIZED: `NOT_AUTHORIZED`,
+};
+
+export {Path, GameType, MAX_MISTAKE_COUNT, AuthorizationStatus};
