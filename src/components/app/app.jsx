@@ -22,16 +22,20 @@ const App = () => {
         <Route exact path = {Path.LOGIN}>
           <AuthScreen />
         </Route>
-        <Route exact path = {Path.RESULT}>
-          <WinScreen
-            onReplayButtonClick={() => history.push(`/game`)}
-          />
-        </Route>
-        <Route exact path = {Path.LOSE}>
-          <GameOverScreen
-            onReplayButtonClick={() => history.push(`/game`)}
-          />
-        </Route>
+        <Route exact path = {Path.RESULT}
+          render={({history}) => (
+            <WinScreen
+              onReplayButtonClick={() => history.push(`/game`)}
+            />
+          )}
+        />
+        <Route exact path = {Path.LOSE}
+          render={({history}) => (
+            <GameOverScreen
+              onReplayButtonClick={() => history.push(`/game`)}
+            />
+          )}
+        />
         <Route exact path="/game">
           <GameScreen
             errorsCount={MAX_MISTAKE_COUNT}
@@ -42,8 +46,6 @@ const App = () => {
   );
 };
 
-App.propTypes = {
-
-};
+App.propTypes = {};
 
 export default App;
