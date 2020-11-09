@@ -1,15 +1,17 @@
 import React from "react";
-import {Switch, Route, BrowserRouter} from "react-router-dom";
+import {Switch, Route, Router as BrowserRouter} from "react-router-dom";
 import WelcomeScreen from "../welcome-screen/welcome-screen";
 import AuthScreen from "../auth-screen/auth-screen";
 import WinScreen from "../win-screen/win-screen";
 import GameOverScreen from "../game-over-screen/game-over-screen";
 import {MAX_MISTAKE_COUNT, Path} from "../../constants";
 import GameScreen from "../game-screen/game-screen";
+import {PrivateRoute} from "../private-route/private-route";
+import browserHistory from "../browser-history/browser-history";
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter history={browserHistory}>
       <Switch>
         <Route exact path = {Path.WELCOME_SCREEN}
           render={({history}) => (
@@ -19,15 +21,25 @@ const App = () => {
             />
           )}
         />
-        <Route exact path = {Path.LOGIN}>
-          <AuthScreen />
-        </Route>
-        <Route exact path = {Path.RESULT}
+        <Route
+          exact
+          path={Path.LOGIN}
           render={({history}) => (
-            <WinScreen
+            <AuthScreen
               onReplayButtonClick={() => history.push(`/game`)}
             />
           )}
+        />
+        <PrivateRoute
+          exact
+          path={Path.RESULT}
+          render={({history}) => {
+            return (
+              <WinScreen
+                onReplayButtonClick={() => history.push(`/game`)}
+              />
+            );
+          }}
         />
         <Route exact path = {Path.LOSE}
           render={({history}) => (

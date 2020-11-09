@@ -7,6 +7,12 @@ const Path = {
   LOSE: `/lose`,
 };
 
+const ApiPath = {
+  LOGIN: `/login`,
+  RESULT: `/result`,
+  QUESTIONS: `/questions`,
+};
+
 const GameType = {
   ARTIST: `artist`,
   GENRE: `genre`,
@@ -19,4 +25,4 @@ const AuthorizationStatus = {
   NOT_AUTHORIZED: `NOT_AUTHORIZED`,
 };
 
-export {Path, GameType, MAX_MISTAKE_COUNT, AuthorizationStatus};
+export {Path, ApiPath, GameType, MAX_MISTAKE_COUNT, AuthorizationStatus};
