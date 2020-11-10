@@ -5,7 +5,7 @@ import {AuthorizationStatus} from "../../constants";
 import {connect} from "react-redux";
 
 const PrivateRoute = ({render, path, exact, authorizationStatus}) => {
-  // console.log(render, path, exact, authorizationStatus);
+
   return (
     <Route
       exact={exact}
