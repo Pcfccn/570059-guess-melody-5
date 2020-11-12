@@ -1,1 +1,10 @@
-get https://5.react.pages.academy/guess-melody/questions HTTP/1.1
+# get https://5.react.pages.academy/guess-melody/questions HTTP/1.1
+
+
+POST https://5.react.pages.academy/guess-melody/login HTTP/1.1
+content-type: application/json
+
+{
+   "email": "dfg@sg.com",
+   "password": "sdf"
+}

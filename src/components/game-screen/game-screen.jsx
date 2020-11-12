@@ -32,6 +32,7 @@ const GameScreen = ({questions, step, onUserAnswer, mistakes}) => {
     case GameType.ARTIST:
       return (
         <ArtistQuestionScreenWrapped
+          key={step}
           question={question}
           onAnswer={onUserAnswer}
         >
@@ -41,6 +42,7 @@ const GameScreen = ({questions, step, onUserAnswer, mistakes}) => {
     case GameType.GENRE:
       return (
         <GenreQuestionScreenWrapped
+          key={step}
           question={question}
           onAnswer={onUserAnswer}
         >
