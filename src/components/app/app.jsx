@@ -6,7 +6,7 @@ import WinScreen from "../win-screen/win-screen";
 import GameOverScreen from "../game-over-screen/game-over-screen";
 import {MAX_MISTAKE_COUNT, Path} from "../../constants";
 import GameScreen from "../game-screen/game-screen";
-import {PrivateRoute} from "../private-route/private-route";
+import PrivateRoute from "../private-route/private-route";
 import browserHistory from "../browser-history/browser-history";
 
 const App = () => {
