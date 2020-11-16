@@ -24,7 +24,6 @@ AudioPlayer.propTypes = {
   ]).isRequired,
   isLoading: PropTypes.bool.isRequired,
   isPlaying: PropTypes.bool.isRequired,
-  src: PropTypes.string.isRequired,
   onPlayButtonClick: PropTypes.func.isRequired,
 };
 

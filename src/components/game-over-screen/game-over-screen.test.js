@@ -9,7 +9,7 @@ it(`Should GameOverScreen render correctly`, () => {
     .create(
         <GameOverScreen
           onReplayButtonClick={noop}
-          resetGameAction={noop}
+          resetGame={noop}
         />
 
     )

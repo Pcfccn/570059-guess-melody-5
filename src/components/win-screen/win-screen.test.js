@@ -13,7 +13,7 @@ describe(`Should WinScreen render correctly`, () => {
               questionsCount={3}
               mistakesCount={0}
               onReplayButtonClick={noop}
-              resetGameAction={noop}
+              resetGame={noop}
             />
 
         )
@@ -29,7 +29,7 @@ describe(`Should WinScreen render correctly`, () => {
               questionsCount={3}
               mistakesCount={1}
               onReplayButtonClick={noop}
-              resetGameAction={noop}
+              resetGame={noop}
             />
 
         )
@@ -47,7 +47,7 @@ describe(`Should WinScreen render correctly`, () => {
               questionsCount={2}
               mistakesCount={0}
               onReplayButtonClick={noop}
-              resetGameAction={noop}
+              resetGame={noop}
             />
         )
         .toJSON();
@@ -62,7 +62,7 @@ describe(`Should WinScreen render correctly`, () => {
               questionsCount={2}
               mistakesCount={1}
               onReplayButtonClick={noop}
-              resetGameAction={noop}
+              resetGame={noop}
             />
         )
         .toJSON();
